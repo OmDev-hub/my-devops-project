@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Our Team{% endblock %}
+
+{% block content %}
+    <h1>The DevOps Team</h1>
+    <p>Meet the (fictional) team behind this project.</p>
+    
+    <!-- We will loop through the team_members data sent from our Python app -->
+    {% for member in team_members %}
+        <div class="card">
+            <h3>{{ member.name }}</h3>
+            <p><strong>Role:</strong> {{ member.role }}</p>
+        </div>
+    {% endfor %}
+{% endblock %}

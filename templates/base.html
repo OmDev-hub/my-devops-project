@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }} - {% block title %}{% endblock %}</title>
+    <!-- Link to our stylesheet. url_for is a special Flask function. -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <!-- url_for generates the correct URL for a function name -->
+        <a href="{{ url_for('index') }}">Home</a>
+        <a href="{{ url_for('about') }}">About</a>
+        <a href="{{ url_for('team') }}">Our Team</a>
+    </nav>
+
+    <div class="container">
+        <!-- This is where the content of other pages will be injected -->
+        {% block content %}{% endblock %}
+    </div>
+
+</body>
+</html>
